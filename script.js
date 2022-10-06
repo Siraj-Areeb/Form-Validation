@@ -84,7 +84,7 @@ function validateForm() {
 
   // To disable relode on submit
   formElement.addEventListener("submit", (task) => {
-    // task.preventDefault();
+    task.preventDefault();
     validateAllEntries(formElement);
   });
 
