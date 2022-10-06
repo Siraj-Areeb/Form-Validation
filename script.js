@@ -96,5 +96,20 @@ function validateForm() {
       validateThisEntry(event.srcElement.parentElement.parentElement);
     });
   });
+
+
+  document.getElementById("submit-btn").addEventListener('submit', captcha_varification => {
+    let response = grecaptcha.getResponse();
+    if (response.length == 0) {
+      document.getElementById("g-recaptcha-error").textContent = "This field is requried.";
+      return false;
+    }
+    return true
+  })
+
+  function verify_Captcha() {
+    document.getElementById("g-recaptcha-error").textContent = "";
+  }
+
 }
 validateForm();
